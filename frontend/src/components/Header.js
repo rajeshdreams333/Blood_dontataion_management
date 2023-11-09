@@ -1,30 +1,33 @@
-import React from "react";
-import { Link } from "react-router-dom";
-const Logo = () => {
+// Header.js
+
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+const Header = () => {
   return (
-    <a href="/">
-      <img
-        className="h-12 rounded-full"
-        src=".\assets\BDMS_logo.jpg"
-        alt="Logo"
-      />
-      <ul className="flex space-x-4 justify-end font-bold px-4">
-        <li><Link to="/" className="hover:text-lg">Home</Link></li>
-        <li><Link to="/contactus" className="hover:text-lg">ContactUs</Link></li>
-        <li><Link to="/about" className="hover:text-lg">About</Link></li>
-        <li><Link to="/admin" className="hover:text-lg">Admin</Link></li>
-        </ul>
-    </a>
+    <header className="bg-red-500 text-black p-6 font-serif text-xl">
+      <div className="container mx-auto flex justify-between items-center">
+        <Link to="/">
+          <img src=".\assets\BDMS_logo.jpg" alt="Logo" className="h-12 w-12 rounded-full" />
+        </Link>
+
+        <nav className="space-x-4">
+          <Link to="/" className="hover:text-2xl">
+            Home
+          </Link>
+          <Link to="/about" className="hover:text-2xl">
+            About
+          </Link>
+          <Link to="/contactus" className="hover:text-2xl">
+            Contact Us
+          </Link>
+          <Link to="/admin" className="hover:text-2xl">
+            Admin
+          </Link>
+        </nav>
+      </div>
+    </header>
   );
 };
-function Header() {
-  return (
-    <>
-    <header className="bg-red-600 p-4 text-white">
-    <Logo/>
-    </header>
-    </>
-  );
-}
 
 export default Header;
