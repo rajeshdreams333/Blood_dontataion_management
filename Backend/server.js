@@ -1,6 +1,7 @@
 const express = require('express');
 const mysql = require('mysql2');
 const app = express();
+const cors=require('cors')
 
 const db = mysql.createConnection({
   host: 'localhost',
@@ -11,6 +12,7 @@ const db = mysql.createConnection({
 });
 
 app.use(express.json())
+app.use(cors())
 db.connect((err) => {
   if (err) {
     console.error('Database connection failed: ' + err.stack);
