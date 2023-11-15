@@ -1,6 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
-const DonarForm = () => {
+import { useNavigate, useParams } from "react-router-dom";
+const UpdateDonar = () => {
+  const {iddonar}=useParams();
+  const navigate=useNavigate();
+  // useEffect(()=>{
+  //   axios.get('http://local:5000/show/')
+  //   .then(res=> console.log(res))
+  //   .catch(err=>console.log(err))
+  //   })
   const [values,setValues]=useState({
     Name:"",
     Age:'',
@@ -10,18 +18,14 @@ const DonarForm = () => {
     Blood_group:'',
     Address:''
   })
-  const handleInput = (event) => {
-    setValues((prev) => ({
-      ...prev,
-      [event.target.name]: event.target.value,
-    }));
+  const handleInput = (e) => {
+    setValues({ ...values, [e.target.name]: e.target.value });
   };
   const handleSubmit = async (e) => {
-    e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/donar',values);
+      const response = await axios.put('http://localhost:5000/update'+ iddonar,values);
       if (response.data.success === true){
-        alert('Donar Added')
+        navigate('/Donardetails')
       }
     } catch (error) {
       console.error(error.response.data);
@@ -125,7 +129,7 @@ const DonarForm = () => {
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold mt-4 py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             type="submit"
           >
-            Submit
+            Update
           </button>
         </div>
       </form>
@@ -133,4 +137,4 @@ const DonarForm = () => {
   );
 };
 
-export default DonarForm;
+export default UpdateDonar;

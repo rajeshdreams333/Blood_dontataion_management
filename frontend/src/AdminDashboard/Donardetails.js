@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
-const Donardashboard = () => {
+const Donardetails = () => {
   const [donars, setDonars] = useState([]);
   useEffect(() => {
     const fetchAlldonars = async () => {
@@ -38,7 +39,7 @@ const Donardashboard = () => {
               </tr>
             </thead>
             <tbody>
-              {donars.map((donar,i) => (
+              {donars.map((donar, i) => (
                 <tr key={i}>
                   <td className="text-md px-4 py-1">{donar.Name}</td>
                   <td className="text-md px-4 py-1">{donar.Gender}</td>
@@ -48,11 +49,13 @@ const Donardashboard = () => {
                   <td className="text-md px-4 py-1">{donar.Blood_group}</td>
                   <td className="text-md px-4 py-1">{donar.Address}</td>
                   <td className="text-md px-3 py-1">
-                    <img
-                      src=".\assets\edit.png"
-                      alt="editimages"
-                      className="h-5 cursor-pointer"
-                    />
+                    <Link to={`update/${donar.iddonar}`}>
+                      <img
+                        src=".\assets\edit.png"
+                        alt="editimages"
+                        className="h-5 cursor-pointer"
+                      />
+                    </Link>
                   </td>
                   <td className="text-md px-3 py-1">
                     <img
@@ -71,4 +74,4 @@ const Donardashboard = () => {
   );
 };
 
-export default Donardashboard;
+export default Donardetails;

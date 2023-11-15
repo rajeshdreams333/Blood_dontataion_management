@@ -21,7 +21,7 @@ const Header = () => {
             Contact Us
           </Link>
           <Link to="/admin" className="hover:text-2xl">
-            Admin
+            Login
           </Link>
         </nav>
       </div>
