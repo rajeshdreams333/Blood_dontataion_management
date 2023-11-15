@@ -1,15 +1,21 @@
-import React, { useState } from "react";
+import React,{ useState } from "react";
+import{ useNavigate } from "react-router-dom";
 const Admin = () => {
   const [data, setData] = useState({
     username: "",
     password: "",
   });
+  const navigate = useNavigate();
   const {username, password } = data;
   const changeHandler = (e) => {
-    setData({ ...data, [e.target.name]: [e.target.value]});
+    setData({ ...data, [e.target.name]: e.target.value});
+    // set value directly.. not array of 
   };
   const submitHandler = (e) => {
-    e.preventDefault();
+    e.preventDefault()
+    if(data.username==='admin' && data.password==="1234")
+    navigate('/DashBoard')
+    else return alert('Invalid Username or Password')
   };
   return (
     <div className="flex items-center justify-center mt-32">

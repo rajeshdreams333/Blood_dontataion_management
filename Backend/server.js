@@ -35,28 +35,28 @@ app.get("/patient",(req,res)=>{
     })
 })
 app.post("/donar",(req,res)=>{
-    const q="INSERT INTO donar (`Donar_Name`,`Blood_Group`,`Contact_Number`) values(?)"
-    const values=[
-        req.body.Donar_Name,
-        req.body.Blood_Group,
-        req.body.Contact_Number
-    ];
-    db.query(q,[values],(err,data)=>{
-        if(err) return res.json(err);
-        return res.json("Donar data added Successfully....");
+    const { Name,Gender,Age,Mobile,Email,Blood_group,Address}=req.body
+    const q=`INSERT INTO donar(Name,Gender,Age,Mobile,Email,Blood_group,Address) values(?)`;
+    db.query(q,[[Name,Gender,Age,Mobile,Email,Blood_group,Address]],(err,result)=>{
+        if (err) {
+            console.error('Database error: ' + err);
+            res.status(500).json({ success: false, message: 'Donar Added Failed' });
+          } else {
+            res.json({ success: true, message: 'Donar Added Successfully' });
+          }
     })
 })
 app.post("/patient",(req,res)=>{
-    const q="INSERT INTO patient (`Name`,`Purpose`,`Contact_Number`) values(?)"
-    const values=[
-        req.body.Name,
-        req.body.Purpose,
-        req.body.Contact_Number
-    ];
-    db.query(q,[values],(err,data)=>{
-        if(err) return res.json(err);
-        return res.json("Patient data added Successfully....");
-    })
+  const { Name,Gender,Age,Mobile,Purpose,Email,Blood_group,Address}=req.body
+  const q=`INSERT INTO patient(Name,Gender,Age,Mobile,Purpose,Email,Blood_group,Address) values(?)`;
+  db.query(q,[[Name,Gender,Age,Mobile,Purpose,Email,Blood_group,Address]],(err,result)=>{
+      if (err) {
+          console.error('Database error: ' + err);
+          res.status(500).json({ success: false, message: 'Patient Added Failed' });
+        } else {
+          res.json({ success: true, message: 'Patient Added Successfully' });
+        }
+  })
 })
 
 const port = process.env.PORT || 5000;
