@@ -48,5 +48,4 @@ const BloodDetails = () => {
     </div>
   )
 }
-
-export default BloodDetails
+export default BloodDetails;

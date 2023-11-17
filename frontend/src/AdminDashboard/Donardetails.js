@@ -15,7 +15,6 @@ const Donardetails = () => {
     };
     fetchAlldonars();
   }, []);
-
   return (
     <>
       <div className="w-full flex shadow-lg mb-6 mt-4">
@@ -49,7 +48,7 @@ const Donardetails = () => {
                   <td className="text-md px-4 py-1">{donar.Blood_group}</td>
                   <td className="text-md px-4 py-1">{donar.Address}</td>
                   <td className="text-md px-3 py-1">
-                    <Link to={`update/${donar.iddonar}`}>
+                    <Link to={`/DashBoard/update/${donar.iddonar}`}>
                       <img
                         src=".\assets\edit.png"
                         alt="editimages"

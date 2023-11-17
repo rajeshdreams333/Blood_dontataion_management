@@ -4,7 +4,7 @@ const AddBlood = () => {
   return (
     <div>
     <div className="flex justify-center items-center font-serif mt-10">
-      <form className="bg-white shadow-md rounded p-10 text-lg" onSubmit={""}>
+      <form className="bg-white shadow-md rounded p-10 text-lg">
         <h1 className="text-center text-lg font-bold">Blood Form</h1>
         <div className="m-5 ml-0">
             Blood Units
@@ -15,7 +15,6 @@ const AddBlood = () => {
             placeholder="Units"
             name="Blood_units"
             required
-            onChange={""}
           />
         </div>
         <div>
@@ -27,7 +26,6 @@ const AddBlood = () => {
             id="blood"
             className="border border-gray-300 rounded w-20 "
             required
-            onChange={"handleInput"}
           >
             <option value="none" defaultValue>
               Select
@@ -54,6 +52,6 @@ const AddBlood = () => {
     </div>
     </div>
   )
-}
+};
 
-export default AddBlood
+export default AddBlood;

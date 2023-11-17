@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
-const DonarForm = ({isToggled}) => {
+import { useNavigate } from "react-router-dom";
+const DonarForm = () => {
+  const navigator=useNavigate()
   const [values,setValues]=useState({
     Name:"",
     Age:'',
@@ -17,17 +19,18 @@ const DonarForm = ({isToggled}) => {
     }));
   };
   const handleSubmit = async (e) => {
-    e.preventDefault();
     try {
       const response = await axios.post('http://localhost:5000/donar',values);
       if (response.data.success === true){
+        e.preventDefault()
         alert('Donar Added')
+        navigator('/DonarForm')
       }
+      
     } catch (error) {
       console.error(error.response.data);
     }
   };
-  if(isToggled){
     return (
       <div className="flex justify-center items-center font-serif">
         <form className="bg-white shadow-md rounded p-10 text-lg" onSubmit={handleSubmit}>
@@ -132,10 +135,6 @@ const DonarForm = ({isToggled}) => {
         </form>
       </div>
     )
-  }
-    else{
-      return(null)
-    }
 };
 
 export default DonarForm;

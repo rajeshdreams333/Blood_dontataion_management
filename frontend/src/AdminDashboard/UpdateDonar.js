@@ -1,35 +1,24 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { useNavigate, useParams } from "react-router-dom";
+import {useParams } from "react-router-dom";
 const UpdateDonar = () => {
-  const {iddonar}=useParams();
-  const navigate=useNavigate();
-  // useEffect(()=>{
-  //   axios.get('http://local:5000/show/')
-  //   .then(res=> console.log(res))
-  //   .catch(err=>console.log(err))
-  //   })
-  const [values,setValues]=useState({
-    Name:"",
-    Age:'',
-    Gender:'',
-    Mobile:"",
-    Email:'',
-    Blood_group:'',
-    Address:''
-  })
+  let {iddonar}=useParams();
+  const [values,setValues]=useState({})
+  useEffect(() => {
+    const fetchAlldonars = async () => {
+      try {
+        const res = await axios.get(`http://localhost:5000/donar/edit/${iddonar}`);
+        setValues(res.data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    fetchAlldonars();
+  }, []);
   const handleInput = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });
   };
   const handleSubmit = async (e) => {
-    try {
-      const response = await axios.put('http://localhost:5000/update'+ iddonar,values);
-      if (response.data.success === true){
-        navigate('/Donardetails')
-      }
-    } catch (error) {
-      console.error(error.response.data);
-    }
   };
   return (
     <div className="flex justify-center items-center font-serif">
