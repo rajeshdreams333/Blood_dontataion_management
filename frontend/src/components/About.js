@@ -4,10 +4,10 @@ const About = () => {
   return (
     <>
       <div className="mt-4 h-screen">
-        <div className=" text-xl font-bold text-center">
+        <div className=" text-2xl font-bold text-center">
           <h1>ABOUT US</h1>
         </div>
-        <div className="text-justify p-2 font-normal text-lg font-serif">
+        <div className="text-justify p-10  pt-6 font-normal text-lg font-serif">
           <p>
             Bee Data Technology is a Global Leader in Enterprise Application
             Development. We undertake both Product Development and also enable
@@ -39,6 +39,7 @@ const About = () => {
             excellence. Know more about us.
           </p>
           <div/>
+          <div>
           <div className="flex">
             <div className="w-1/4">
               <img src=".\assets\img1.png" alt="img"></img>
@@ -54,10 +55,10 @@ const About = () => {
             </div>
           </div>
         </div>
-        <div className="m-10">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d237.40497954496644!2d83.35607769536861!3d17.81613507587443!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a395b804ee8025f%3A0x5e3eb944629d051c!2sBeedata%20Technology!5e0!3m2!1sen!2sin!4v1700171758783!5m2!1sen!2sin" className="w-1/3"></iframe>
         </div>
-        <h1>Bee Data</h1>
+        <div className="border p-4 ">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d237.40497954496644!2d83.35607769536861!3d17.81613507587443!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a395b804ee8025f%3A0x5e3eb944629d051c!2sBeedata%20Technology!5e0!3m2!1sen!2sin!4v1700171758783!5m2!1sen!2sin" className=""></iframe>
+        </div>
         <div >
         </div>
       </div>

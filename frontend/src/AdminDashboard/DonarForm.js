@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 const DonarForm = () => {
-  const navigator=useNavigate()
+  // const navigator=useNavigate()
   const [values,setValues]=useState({
     Name:"",
     Age:'',
@@ -19,12 +19,11 @@ const DonarForm = () => {
     }));
   };
   const handleSubmit = async (e) => {
+    e.preventDefault();
     try {
       const response = await axios.post('http://localhost:5000/donar',values);
       if (response.data.success === true){
-        e.preventDefault()
         alert('Donar Added')
-        navigator('/DonarForm')
       }
       
     } catch (error) {
@@ -50,9 +49,11 @@ const DonarForm = () => {
           <div className="m-5 ml-0">
             <label>Gender</label>
             <br/>
-            <input id="male" type="radio" name="Gender" onChange={handleInput}/>
+            <input id="male" type="radio" name="Gender"  value="Male"
+           onChange={handleInput}/>
             Male
-            <input id="female" type="radio" name="Gender" onChange={handleInput}/>
+            <input id="female" type="radio" name="Gender"  value="Female"
+           onChange={handleInput}/>
             Female 
           </div>
           <div className="m-5 ml-0">

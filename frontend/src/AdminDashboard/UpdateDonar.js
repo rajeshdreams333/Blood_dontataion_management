@@ -5,16 +5,19 @@ const UpdateDonar = () => {
   let {iddonar}=useParams();
   const [values,setValues]=useState({})
   useEffect(() => {
-    const fetchAlldonars = async () => {
+    const fetchOnedonars = async () => {
+      console.log(iddonar);
       try {
-        const res = await axios.get(`http://localhost:5000/donar/edit/${iddonar}`);
-        setValues(res.data);
+        const url ="http://localhost:5000/donar/edit";{
+        const params1=iddonar
+        axios.get(url,{params1})
+        }
       } catch (err) {
         console.log(err);
       }
     };
-    fetchAlldonars();
-  }, []);
+    fetchOnedonars();
+  },[]);
   const handleInput = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });
   };

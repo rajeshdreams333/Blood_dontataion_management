@@ -27,8 +27,9 @@ app.get("/donar", (req, res) => {
     return res.json(data);
   });
 });
-app.get('http://localhost:5000/donar/edit/:iddonar', (req, res) => {
-  const iddonar = req.params.iddonar;
+
+app.get("/donar/edit", (req, res) => {
+  let iddonar=req.params.body
   console.log(iddonar);
   const q = `select * from  donar where iddoner=?`;
   db.query(q, [iddonar], (err, data) => {
@@ -36,13 +37,7 @@ app.get('http://localhost:5000/donar/edit/:iddonar', (req, res) => {
     return res.json(data);
   });
 });
-app.get("/patient", (req, res) => {
-  const q = "select * from patient";
-  db.query(q, (err, data) => {
-    if (err) return res.json(err);
-    return res.json(data);
-  });
-});
+
 app.post("/donar", (req, res) => {
   const { Name, Gender, Age, Mobile, Email, Blood_group, Address } = req.body;
   const q = `INSERT INTO donar(Name,Gender,Age,Mobile,Email,Blood_group,Address) values(?)`;
@@ -59,25 +54,23 @@ app.post("/donar", (req, res) => {
     }
   );
 });
-app.post("/patient", (req, res) => {
-  const { Name, Gender, Age, Mobile, Purpose, Email, Blood_group, Address } =
-    req.body;
-  const q = `INSERT INTO patient(Name,Gender,Age,Mobile,Purpose,Email,Blood_group,Address) values(?)`;
+app.post("/blood", (req, res) => {
+  const { Blood_group,units } = req.body;
+  const q = `INSERT INTO Blood(Blood_group,units) values(?)`;
   db.query(
     q,
-    [[Name, Gender, Age, Mobile, Purpose, Email, Blood_group, Address]],
+    [[Blood_group,units]],
     (err, result) => {
       if (err) {
         console.error("Database error: " + err);
-        res
-          .status(500)
-          .json({ success: false, message: "Patient Added Failed" });
+        res.status(500).json({ success: false, message: "Blood Added Failed" });
       } else {
-        res.json({ success: true, message: "Patient Added Successfully" });
+        res.json({ success: true, message: "Blood Added Successfully" });
       }
     }
   );
 });
+
 app.put("/update/:iddonar", (req, res) => {
   const { Name, Gender, Age, Mobile, Email, Blood_group, Address } = req.body;
   const iddonar = req.body.iddonar;
@@ -100,3 +93,33 @@ const port = process.env.PORT || 5000;
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
+
+
+// app.post("/patient", (req, res) => {
+//   const { Name, Gender, Age, Mobile, Purpose, Email, Blood_group, Address } =
+//     req.body;
+//   const q = `INSERT INTO patient(Name,Gender,Age,Mobile,Purpose,Email,Blood_group,Address) values(?)`;
+//   db.query(
+//     q,
+//     [[Name, Gender, Age, Mobile, Purpose, Email, Blood_group, Address]],
+//     (err, result) => {
+//       if (err) {
+//         console.error("Database error: " + err);
+//         res
+//           .status(500)
+//           .json({ success: false, message: "Patient Added Failed" });
+//       } else {
+//         res.json({ success: true, message: "Patient Added Successfully" });
+//       }
+//     }
+//   );
+// });
+
+
+// app.get("/patient", (req, res) => {
+//   const q = "select * from patient";
+//   db.query(q, (err, data) => {
+//     if (err) return res.json(err);
+//     return res.json(data);
+//   });
+// });

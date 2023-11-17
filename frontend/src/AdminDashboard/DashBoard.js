@@ -3,6 +3,7 @@ import DonarForm from "./DonarForm";
 import Donardetails from "./Donardetails";
 import AddBlood from "./AddBlood";
 import BloodDetails from "./BloodDetails";
+import BloodStocks from "./BloodStocks";
 
 const DashBoard = () => {
   const [isToggled,setIsToggled]=useState(1);
@@ -65,7 +66,7 @@ const DashBoard = () => {
       {(() => {
         switch (isToggled) {
           case 1:
-            return <DonarForm/>
+            return <BloodStocks/>
           case 2:
             return <DonarForm/>
           case 3:
