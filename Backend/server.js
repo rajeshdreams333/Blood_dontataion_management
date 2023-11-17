@@ -27,6 +27,13 @@ app.get("/donar", (req, res) => {
     return res.json(data);
   });
 });
+app.get("/blood", (req, res) => {
+  const q = "select * from  donar";
+  db.query(q, (err, data) => {
+    if (err) return res.json(err);
+    return res.json(data);
+  });
+});
 
 app.get("/donar/edit", (req, res) => {
   let iddonar=req.params.body
