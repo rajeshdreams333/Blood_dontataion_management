@@ -28,18 +28,10 @@ app.get("/donar", (req, res) => {
   });
 });
 app.get("/blood", (req, res) => {
-  const q = "select * from  donar";
+  const {Blood_group,Units}=req.body;
+  // console.log(Blood_group,Units);
+  const q = "select * from  blood";
   db.query(q, (err, data) => {
-    if (err) return res.json(err);
-    return res.json(data);
-  });
-});
-
-app.get("/donar/edit", (req, res) => {
-  let iddonar=req.params.body
-  console.log(iddonar);
-  const q = `select * from  donar where iddoner=?`;
-  db.query(q, [iddonar], (err, data) => {
     if (err) return res.json(err);
     return res.json(data);
   });
@@ -62,11 +54,11 @@ app.post("/donar", (req, res) => {
   );
 });
 app.post("/blood", (req, res) => {
-  const { Blood_group,units } = req.body;
-  const q = `INSERT INTO Blood(Blood_group,units) values(?)`;
+  const { Blood_group,Units} = req.body;
+  const q = `update blood set Units = Units + ? where Blood_group = ?`;
   db.query(
     q,
-    [[Blood_group,units]],
+    [Number(Units),Blood_group],
     (err, result) => {
       if (err) {
         console.error("Database error: " + err);
@@ -77,23 +69,39 @@ app.post("/blood", (req, res) => {
     }
   );
 });
+app.post("/patients", (req, res) => {
+  const { Name, Units, Blood_group, Purpose } = req.body;
 
-app.put("/update/:iddonar", (req, res) => {
-  const { Name, Gender, Age, Mobile, Email, Blood_group, Address } = req.body;
-  const iddonar = req.body.iddonar;
-  const q = `update donar set Name= ?, Gender=?, Age=?, Mobile=?, Email=?, Blood_group=?, Address=?, where iddonar=?`;
-  db.query(
-    q,
-    [[Name, Gender, Age, Mobile, Email, Blood_group, Address], iddonar],
-    (err, result) => {
+  // First query to insert patient
+  const q1 = `INSERT INTO patient(Name, Units, Blood_group, Purpose) VALUES (?)`;
+  const insertPatientPromise = new Promise((resolve, reject) => {
+    db.query(q1, [[Name, Units, Blood_group, Purpose]], (err, result) => {
       if (err) {
-        console.error("Database error: " + err);
-        res.status(500).json({ success: false, message: "Donar Added Failed" });
+        console.error("Database error (insert patient): " + err);
+        reject("Patient Added Failed");
       } else {
-        res.json({ success: true, message: "Donar Added Successfully" });
+        resolve("Patient Added Successfully");
       }
-    }
-  );
+    });
+  });
+  const q2 = `UPDATE blood SET Units = Units - ? WHERE Blood_group = ?`;
+  const updateBloodPromise = new Promise((resolve, reject) => {
+    db.query(q2, [Number(Units), Blood_group], (err, result) => {
+      if (err) {
+        console.error("Database error (update blood): " + err);
+        reject("Blood Added Failed");
+      } else {
+        resolve("Blood Added Successfully");
+      }
+    });
+  });
+  Promise.all([insertPatientPromise, updateBloodPromise])
+    .then((messages) => {
+      res.json({ success: true, messages });
+    })
+    .catch((error) => {
+      res.status(500).json({ success: false, message: error });
+    });
 });
 
 const port = process.env.PORT || 5000;
@@ -101,32 +109,4 @@ app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
 
-
-// app.post("/patient", (req, res) => {
-//   const { Name, Gender, Age, Mobile, Purpose, Email, Blood_group, Address } =
-//     req.body;
-//   const q = `INSERT INTO patient(Name,Gender,Age,Mobile,Purpose,Email,Blood_group,Address) values(?)`;
-//   db.query(
-//     q,
-//     [[Name, Gender, Age, Mobile, Purpose, Email, Blood_group, Address]],
-//     (err, result) => {
-//       if (err) {
-//         console.error("Database error: " + err);
-//         res
-//           .status(500)
-//           .json({ success: false, message: "Patient Added Failed" });
-//       } else {
-//         res.json({ success: true, message: "Patient Added Successfully" });
-//       }
-//     }
-//   );
-// });
-
-
-// app.get("/patient", (req, res) => {
-//   const q = "select * from patient";
-//   db.query(q, (err, data) => {
-//     if (err) return res.json(err);
-//     return res.json(data);
-//   });
-// });
+ 
