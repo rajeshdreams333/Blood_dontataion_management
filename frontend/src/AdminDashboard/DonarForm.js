@@ -3,15 +3,15 @@ import axios from "axios";
 // import { useNavigate } from "react-router-dom";
 const DonarForm = () => {
   // const navigator=useNavigate()
-  const [values,setValues]=useState({
-    Name:"",
-    Age:'',
-    Gender:'',
-    Mobile:"",
-    Email:'',
-    Blood_group:'',
-    Address:''
-  })
+  const [values, setValues] = useState({
+    Name: "",
+    Age: "",
+    Gender: "",
+    Mobile: "",
+    Email: "",
+    Blood_group: "",
+    Address: "",
+  });
   const handleInput = (event) => {
     setValues((prev) => ({
       ...prev,
@@ -21,121 +21,149 @@ const DonarForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/donar',values);
-      if (response.data.success === true){
-        alert('Donar Added')
+      const response = await axios.post("http://localhost:5000/donar", values);
+      if (response.data.success === true) {
+        alert("Donar Added");
+        setValues({
+          Name: "",
+          Age: "",
+          Gender: "",
+          Mobile: "",
+          Email: "",
+          Blood_group: "",
+          Address: "",
+        });
       }
-      
     } catch (error) {
       console.error(error.response.data);
     }
   };
-    return (
-      <div className="flex justify-center items-center font-serif">
-        <form className="bg-white shadow-md rounded p-10 text-lg" onSubmit={handleSubmit}>
-          <h1 className="text-center text-lg font-bold">Donar Form</h1>
-          <div className="m-5 ml-0">
-            <label>Name</label>
-            <input
-              className="w-full mt-2 border border-gray-300 rounded"
-              id="name"
-              type="text"
-              placeholder="Name"
-              name="Name"
-              onChange={handleInput}
-              required
-            />
-          </div>
-          <div className="m-5 ml-0">
-            <label>Gender</label>
-            <br/>
-            <input id="male" type="radio" name="Gender"  value="Male"
-           onChange={handleInput}/>
-            Male
-            <input id="female" type="radio" name="Gender"  value="Female"
-           onChange={handleInput}/>
-            Female 
-          </div>
-          <div className="m-5 ml-0">
-              Age
-            <input
-              className="w-full mt-2 border border-gray-300 rounded"
-              id="age"
-              type="number"
-              placeholder="Age"
-              name="Age"
-              required
-              onChange={handleInput}
-            />
-          </div>
-          <div>
-            <label className="mr-6">
-              Blood Group
-            </label>
-            <select
-              name="Blood_group"
-              id="blood"
-              className="border border-gray-300 rounded w-20 "
-              required
-              onChange={handleInput}
-            >
-              <option value="none" defaultValue>
-                Select
-              </option>
-              <option value="O+ve">O+ve</option>
-              <option value="O-ve">O-ve</option>
-              <option value="A+ve">A+ve</option>
-              <option value="A-ve">A-ve</option>
-              <option value="B+ve">B+ve</option>
-              <option value="B-ve">B-ve</option>
-              <option value="AB+ve">AB+ve</option>
-              <option value="AB-ve">AB-ve</option>
-            </select>
-          </div>
-          <div className="m-5 ml-0">
-            <label>Email</label>
-            <input
-              className="w-full mt-2 border border-gray-300 rounded"
-              id="email"
-              type="email"
-              placeholder="Email"
-              name="Email"
-              onChange={handleInput}
-            />
-          </div>
-          <div className="m-5 ml-0">
-            <label className="">Mobile Number</label>
-            <input
-              className="w-full mt-2 border border-gray-300 rounded"
-              id="mobile"
-              type="text"
-              placeholder="Mobile"
-              name="Mobile"
+  return (
+    <div className="flex justify-center items-center font-serif">
+      <form
+        className="bg-white shadow-md rounded p-10 text-lg"
+        onSubmit={handleSubmit}
+      >
+        <h1 className="text-center text-lg font-bold">Donar Form</h1>
+        <div className="m-5 ml-0">
+          <label>Name</label>
+          <input
+            className="w-full mt-2 border border-gray-300 rounded"
+            type="text"
+            placeholder="Name"
+            name="Name"
+            value={values.Name}
             onChange={handleInput}
-            />
-          </div>
-          <div className="m-5 ml-0">
-            <label className="">Address</label>
-            <input
-              className="w-full mt-2 border border-gray-300 rounded"
-              id="Address"
-              type="text"
-              placeholder="Address"
-              name="Address"
+            required
+          />
+        </div>
+        <div className="m-5 ml-0">
+          <label>
+            Gender
+            <div>
+              <input
+                id="male"
+                type="radio"
+                name="Gender"
+                value="Male"
+                onChange={handleInput}
+              />
+              Male
+              <input
+                id="female"
+                type="radio"
+                name="Gender"
+                value="Female"
+                onChange={handleInput}
+              />
+              Female
+            </div>
+          </label>
+        </div>
+        <div className="m-5 ml-0">
+          Age
+          <input
+            className="w-full mt-2 border border-gray-300 rounded"
+            id="age"
+            type="number"
+            placeholder="Age"
+            name="Age"
+            value={values.Age}
+            required
             onChange={handleInput}
-            />
-          </div>
-          <div className="">
-            <button
-              className="bg-blue-500 hover:bg-blue-700 text-white font-bold mt-4 py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-              type="submit"
-            >
-              Submit
-            </button>
-          </div>
-        </form>
-      </div>
-    )
+          />
+        </div>
+        <div>
+          <label className="mr-6">Blood Group</label>
+          <select
+            name="Blood_group"
+            id="blood"
+            className="border border-gray-300 rounded w-20 "
+            value={values.Blood_group}
+            required
+            onChange={handleInput}
+          >
+            <option value="none" defaultValue>
+              Select
+            </option>
+            <option value="O+ve">O+ve</option>
+            <option value="O-ve">O-ve</option>
+            <option value="A+ve">A+ve</option>
+            <option value="A-ve">A-ve</option>
+            <option value="B+ve">B+ve</option>
+            <option value="B-ve">B-ve</option>
+            <option value="AB+ve">AB+ve</option>
+            <option value="AB-ve">AB-ve</option>
+          </select>
+        </div>
+        <div className="m-5 ml-0">
+          <label>Email</label>
+          <input
+            className="w-full mt-2 border border-gray-300 rounded"
+            id="email"
+            type="email"
+            placeholder="Email"
+            name="Email"
+            value={values.Email}
+            onChange={handleInput}
+          />
+        </div>
+        <div className="m-5 ml-0">
+          <label className="">Mobile Number</label>
+          <input
+            className="w-full mt-2 border border-gray-300 rounded"
+            id="mobile"
+            type="text"
+            placeholder="Mobile"
+            name="Mobile"
+            value={values.Mobile}
+            required
+            onChange={handleInput}
+          />
+        </div>
+        <div className="m-5 ml-0">
+          <label className="">Address</label>
+          <input
+            className="w-full mt-2 border border-gray-300 rounded"
+            id="Address"
+            type="text"
+            placeholder="Address"
+            name="Address"
+            value={values.Address}
+            onChange={handleInput}
+          />
+        </div>
+        <div className="">
+          <button
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold mt-4 py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            type="submit"
+          >
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
+  );
 };
 
 export default DonarForm;

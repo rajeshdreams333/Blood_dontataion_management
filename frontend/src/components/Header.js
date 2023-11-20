@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
-    <header className="bg-red-500 text-black p-4 font-serif text-xl h-16">
+    <header className="bg-red-500 text-white p-4 font-serif text-xl h-16">
       <div className="container mx-auto flex justify-between items-center"> 
         <Link to="/">
           <img src=".\assets\BDMS_logo.png" alt="Logo" className="h-10 w-42" />

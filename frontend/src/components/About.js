@@ -3,7 +3,7 @@ import React from "react";
 const About = () => {
   return (
     <>
-      <div className="mt-4 h-screen">
+      <div className="mt-4 h-screen bg-slate">
         <div className=" text-2xl font-bold text-center">
           <h1>ABOUT US</h1>
         </div>
@@ -38,26 +38,57 @@ const About = () => {
             Engineering to think as artists with passion and an eye for
             excellence. Know more about us.
           </p>
-          <div/>
+          <div />
           <div>
-          <div className="flex">
-            <div className="w-1/4">
-              <img src=".\assets\img1.png" alt="img"></img>
-            </div>
-            <div className="w-1/4">
-              <img src=".\assets\img1.png" alt="img"></img>
-            </div>
-            <div className="w-1/4">
-              <img src=".\assets\img1.png" alt="img"></img>
-            </div>
-            <div className="w-1/4">
-              <img src=".\assets\img1.png" alt="img"></img>
+            <div className="flex">
+              <div className="w-1/4">
+                <img src=".\assets\img1.png" alt="img"></img>
+              </div>
+              <div className="w-1/4">
+                <img src=".\assets\img1.png" alt="img"></img>
+              </div>
+              <div className="w-1/4">
+                <img src=".\assets\img1.png" alt="img"></img>
+              </div>
+              <div className="w-1/4">
+                <img src=".\assets\img1.png" alt="img"></img>
+              </div>
             </div>
           </div>
         </div>
-        </div>
-        <div className="border p-4 ">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d237.40497954496644!2d83.35607769536861!3d17.81613507587443!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a395b804ee8025f%3A0x5e3eb944629d051c!2sBeedata%20Technology!5e0!3m2!1sen!2sin!4v1700171758783!5m2!1sen!2sin" className=""></iframe>
+        <div className="border  flex">
+          <div className="w-1/4 p-10">
+            <h1 className="font-bold">Offshore-Visakhapatnam</h1>
+            <address className="text-lg"><span className="font-bold">&nbsp;Address: </span>Door Number#7-1/2B(2nd floor), Near Dmart, Madhurawada, Visakhapatnam-530048.</address>
+            <p>&nbsp;<a href="tel:847-960-4204"><i class="bi bi-telephone-fill"></i>&nbsp;&nbsp;<span className="font-bold">Call To:</span> 0891-2566299</a></p>
+            <p>&nbsp;<i class="bi bi-printer-fill"></i>&nbsp;&nbsp;<a href="fax:847-960-3279"><span className="font-bold">Fax:</span>&nbsp;&nbsp;847-960-3279</a></p>
+            <p>&nbsp;<a href="mailto:hrteam@bedatatech.com"><i class="bi bi-envelope-fill"></i>&nbsp;&nbsp;<span className="text-xl font-bold">Mail To:</span> <span classname="text-xl">hrteam@bedatatech.com</span></a></p>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d30386.42817413678!2d83.34440131892326!3d17.824400926114325!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sDoor%20Number%237-1%2F2B%20Near%20D'Mart%20madhiravada!5e0!3m2!1sen!2sin!4v1627925980413!5m2!1sen!2sin" className="w-full h-60"></iframe>
+          </div>
+          <div className="w-1/4 p-10">
+            <h1 className="font-bold">Offshore-Visakhapatnam</h1>
+            <address className="text-lg">&nbsp;<i class="bi bi-geo-alt-fill"></i><span className="font-bold">&nbsp;Address: </span>Door Number#7-1/2B(2nd floor), Near Dmart, Madhurawada, Visakhapatnam-530048.</address>
+            <p>&nbsp;<a href="tel:847-960-4204"><i class="bi bi-telephone-fill"></i>&nbsp;&nbsp;<span className="font-bold">Call To:</span> 0891-2566299</a></p>
+            <p>&nbsp;<i class="bi bi-printer-fill"></i>&nbsp;&nbsp;<a href="fax:847-960-3279"><span className="font-bold">Fax:</span>&nbsp;&nbsp;847-960-3279</a></p>
+            <p>&nbsp;<a href="mailto:hrteam@bedatatech.com"><i class="bi bi-envelope-fill"></i>&nbsp;&nbsp;<span className="text-xl font-bold">Mail To:</span> <span classname="text-xl">hrteam@bedatatech.com</span></a></p>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d30386.42817413678!2d83.34440131892326!3d17.824400926114325!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sDoor%20Number%237-1%2F2B%20Near%20D'Mart%20madhiravada!5e0!3m2!1sen!2sin!4v1627925980413!5m2!1sen!2sin" className="w-full h-60"></iframe>
+          </div>
+          <div className="w-1/4 p-10">
+            <h1 className="font-bold">Offshore-Visakhapatnam</h1>
+            <address className="text-lg">&nbsp;<i class="bi bi-geo-alt-fill"></i><span className="font-bold">&nbsp;Address: </span>Door Number#7-1/2B(2nd floor), Near Dmart, Madhurawada, Visakhapatnam-530048.</address>
+            <p>&nbsp;<a href="tel:847-960-4204"><i class="bi bi-telephone-fill"></i>&nbsp;&nbsp;<span className="font-bold">Call To:</span> 0891-2566299</a></p>
+            <p>&nbsp;<i class="bi bi-printer-fill"></i>&nbsp;&nbsp;<a href="fax:847-960-3279"><span className="font-bold">Fax:</span>&nbsp;&nbsp;847-960-3279</a></p>
+            <p>&nbsp;<a href="mailto:hrteam@bedatatech.com"><i class="bi bi-envelope-fill"></i>&nbsp;&nbsp;<span className="text-xl font-bold">Mail To:</span> <span classname="text-xl">hrteam@bedatatech.com</span></a></p>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d30386.42817413678!2d83.34440131892326!3d17.824400926114325!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sDoor%20Number%237-1%2F2B%20Near%20D'Mart%20madhiravada!5e0!3m2!1sen!2sin!4v1627925980413!5m2!1sen!2sin" className="w-full h-60"></iframe>
+          </div>
+          <div className="w-1/4 p-10">
+            <h1 className="font-bold">Offshore-Visakhapatnam</h1>
+            <address className="text-lg">&nbsp;<i class="bi bi-geo-alt-fill"></i><span className="font-bold">&nbsp;Address: </span>Door Number#7-1/2B(2nd floor), Near Dmart, Madhurawada, Visakhapatnam-530048.</address>
+            <p>&nbsp;<a href="tel:847-960-4204"><i class="bi bi-telephone-fill"></i>&nbsp;&nbsp;<span className="font-bold">Call To:</span> 0891-2566299</a></p>
+            <p>&nbsp;<i class="bi bi-printer-fill"></i>&nbsp;&nbsp;<a href="fax:847-960-3279"><span className="font-bold">Fax:</span>&nbsp;&nbsp;847-960-3279</a></p>
+            <p>&nbsp;<a href="mailto:hrteam@bedatatech.com"><i class="bi bi-envelope-fill"></i>&nbsp;&nbsp;<span className="text-xl font-bold">Mail To:</span> <span classname="text-xl">hrteam@bedatatech.com</span></a></p>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d30386.42817413678!2d83.34440131892326!3d17.824400926114325!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sDoor%20Number%237-1%2F2B%20Near%20D'Mart%20madhiravada!5e0!3m2!1sen!2sin!4v1627925980413!5m2!1sen!2sin" className="w-full h-60"></iframe>
+          </div>
         </div>
         <div >
         </div>

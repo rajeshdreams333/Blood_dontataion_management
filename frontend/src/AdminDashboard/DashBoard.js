@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import DonarForm from "./DonarForm";
 import Donardetails from "./Donardetails";
 import AddBlood from "./AddBlood";
-import BloodDetails from "./BloodDetails";
+import PatientForm from "./PatientForm";
 import BloodStocks from "./BloodStocks";
 
 const DashBoard = () => {
@@ -57,7 +57,7 @@ const DashBoard = () => {
                 className="bg-red-300 h-10 w-40 rounded-3xl"
                 onClick={() =>setIsToggled(5)}
               >
-                BloodDetails
+                PatientForm
               </button>
             </div>  
           </div>
@@ -74,7 +74,7 @@ const DashBoard = () => {
           case 4:
             return <AddBlood/>
           case 5:
-            return <BloodDetails/>
+            return <PatientForm/>
           default:
             return null
         }

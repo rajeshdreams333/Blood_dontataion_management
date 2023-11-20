@@ -9,6 +9,7 @@ import Donardetails from '../AdminDashboard/Donardetails';
 import UpdateDonar from '../AdminDashboard/UpdateDonar';
 import DonarForm from '../AdminDashboard/DonarForm';
 import AddBlood from '../AdminDashboard/AddBlood';
+import PatientForm from '../AdminDashboard/PatientForm';
 const Body = () => {
   return (
     <>
@@ -22,6 +23,7 @@ const Body = () => {
     <Route path="/DonarForm" element={<DonarForm/>}/>
     <Route path="/AddBlood" element={<AddBlood/>}/>
     <Route path="/Donardetails" element={<Donardetails/>}/>
+    <Route path="/PatientForm" element={<PatientForm/>}/>
     <Route path="/DashBoard/update/:iddonar" element={<UpdateDonar/>}/> 
     </Routes>
     </div>

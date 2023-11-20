@@ -6,7 +6,6 @@ const BloodStocks = () => {
     const fetchAlldonars = async () => {
       try {
         const res = await axios.get("http://localhost:5000/blood");
-        console.log(res.json());
         setBloods(res.data);
       } catch (err) {
         console.log(err);
@@ -18,17 +17,17 @@ const BloodStocks = () => {
     <div>
       <div>
         <div>
-          <h1 className="text-center font-bold text-3xl">Blood Stocks</h1>
+          <h1 className="text-center font-bold text-3xl mt-5">Blood Stocks</h1>
         </div>
         <div className="grid gap-x-8 gap-y-4 grid-cols-4 m-20 ml-40">
-        {bloods.map((blood, i) => (
-            <div className="bg-red-500 text-center p-20 rounded-full">
-              Blood Group : {blood.Blood_group}
-              <br />
-              Units :{blood.unit}
-            </div>
-          
-        ))}
+            {
+                bloods.map((blood,i)=>(
+                    <div className="bg-red-100 text-center p-20 rounded-full">
+                       <div><h1 className="font-bold">Group</h1><h2 className="text-xl font-extrabold">{blood.Blood_group}</h2></div>
+                       <div><h1 className="font-bold">Units</h1><h2 className="text-xl font-extrabold">{blood.Units}</h2></div>
+                    </div>  
+                ))
+            }
         </div>
       </div>
     </div>

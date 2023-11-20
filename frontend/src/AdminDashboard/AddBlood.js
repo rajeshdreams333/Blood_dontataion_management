@@ -2,13 +2,13 @@ import React, { useState } from 'react'
 import axios from 'axios'
 const AddBlood = () => {
   const [values,setValues]=useState({
-    units:'',
+    Units:'',
     Blood_group:''
   })
   const handleInput = (event) => {
     setValues((prev) => ({
       ...prev,
-      [event.target.name]: event.target.value,
+      [event.target.name]:event.target.value,
     }));
   };
   const handleSubmit = async (e) => {
@@ -18,7 +18,7 @@ const AddBlood = () => {
       if (response.data.success === true){
         alert('Blood Added Successfull')
         setValues({
-          units:'',
+          Units:'',
           Blood_group:''
         });
       }
@@ -38,9 +38,9 @@ const AddBlood = () => {
             className="w-full mt-2 border border-gray-300 rounded"
             type="number"
             placeholder="Units"
-            name="units"
+            name="Units"            
             required
-            value={values.units}
+            value={values.Units}
             onChange={handleInput}
           />
         </div>
@@ -49,8 +49,8 @@ const AddBlood = () => {
             Blood Group
           </label>
           <select
+            type="text"
             name="Blood_group"
-            id="Blood_group"
             className="border border-gray-300 rounded w-20 "
             value={values.Blood_group}
             required
