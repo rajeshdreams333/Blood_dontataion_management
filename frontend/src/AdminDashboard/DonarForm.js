@@ -39,14 +39,14 @@ const DonarForm = () => {
     }
   };
   return (
-    <div className="flex justify-center items-center font-serif">
+    <div className="flex justify-center font-serif">
       <form
         className="bg-white shadow-md rounded p-10 text-lg"
         onSubmit={handleSubmit}
       >
         <h1 className="text-center text-lg font-bold">Donar Form</h1>
         <div className="m-5 ml-0">
-          <label>Name</label>
+          <label>Name
           <input
             className="w-full mt-2 border border-gray-300 rounded"
             type="text"
@@ -56,6 +56,7 @@ const DonarForm = () => {
             onChange={handleInput}
             required
           />
+          </label>
         </div>
         <div className="m-5 ml-0">
           <label>
@@ -81,6 +82,7 @@ const DonarForm = () => {
           </label>
         </div>
         <div className="m-5 ml-0">
+          <label>
           Age
           <input
             className="w-full mt-2 border border-gray-300 rounded"
@@ -92,9 +94,10 @@ const DonarForm = () => {
             required
             onChange={handleInput}
           />
+          </label>
         </div>
         <div>
-          <label className="mr-6">Blood Group</label>
+          <label className="mr-6">Blood Group
           <select
             name="Blood_group"
             id="blood"
@@ -115,9 +118,10 @@ const DonarForm = () => {
             <option value="AB+ve">AB+ve</option>
             <option value="AB-ve">AB-ve</option>
           </select>
+          </label>
         </div>
         <div className="m-5 ml-0">
-          <label>Email</label>
+          <label>Email
           <input
             className="w-full mt-2 border border-gray-300 rounded"
             id="email"
@@ -127,9 +131,10 @@ const DonarForm = () => {
             value={values.Email}
             onChange={handleInput}
           />
+          </label>
         </div>
         <div className="m-5 ml-0">
-          <label className="">Mobile Number</label>
+          <label className="">Mobile Number
           <input
             className="w-full mt-2 border border-gray-300 rounded"
             id="mobile"
@@ -140,9 +145,10 @@ const DonarForm = () => {
             required
             onChange={handleInput}
           />
+          </label>
         </div>
         <div className="m-5 ml-0">
-          <label className="">Address</label>
+          <label className="">Address
           <input
             className="w-full mt-2 border border-gray-300 rounded"
             id="Address"
@@ -152,6 +158,7 @@ const DonarForm = () => {
             value={values.Address}
             onChange={handleInput}
           />
+          </label>
         </div>
         <div className="">
           <button

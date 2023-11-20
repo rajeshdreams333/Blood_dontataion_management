@@ -2,9 +2,9 @@ import React from "react";
 function Home() {
   return (
     <>
-      <div className="bg-gray-300">
+      <div className="">
         <div className="flex">
-          <div className="w-1/2 pl-32 pt-20">
+          <div className="w-1/2 pl-32 pt-10">
             <h1 className="text-6xl mt-1m font-serif">
               Donate Blood to Save Life
             </h1>
@@ -24,13 +24,7 @@ function Home() {
               experience these benefits.You can enjoy these same benefits by
               going to the closest blood center to start donating blood
               today.People who volunteer, donate or take part in community
-              service experience these benefits.You can enjoy these same
-              benefits by going to the closest blood center to start donating
-              blood today.People who volunteer, donate or take part in community
-              service experience these benefits.You can enjoy these same
-              benefits by going to the closest blood center to start donating
-              blood today.You can enjoy these same benefits by going to the
-              closest blood center to start donating blood today.
+              service experience these benefits.
             </h1>
             <div className="mt-4">
               <button className="bg-red-500 p-2 w-24 mt-2 rounded-xl">
@@ -41,8 +35,8 @@ function Home() {
               </button>
             </div>
           </div>
-          <div className="w-1/2">
-            <img src=".\assets\img1.png" alt="images" />
+          <div className="w-1/2" >
+            <img src=".\assets\img1.png" alt="images" style={{height:660}} />
           </div>
         </div>
       </div>
