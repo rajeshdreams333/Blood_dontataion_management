@@ -69,10 +69,22 @@ app.post("/blood", (req, res) => {
     }
   );
 });
+app.delete('/remove/:iddonar',(req,res)=>{
+  const {iddonar}=req.params;
+  console.log(iddonar);
+  const q='DELETE FROM donar WHERE iddonar = ?;';
+  db.query(q,[iddonar],
+  (err,result)=>{
+    if(err){
+      console.log("Database Error:"+err);
+      res.status(500).json({success:false,message:"Donar Deleted Failed.."})
+    }else{
+      res.json({success:true,message:"Donar Deleted Successfully.."})
+    }
+  })
+});
 app.post("/patients", (req, res) => {
   const { Name, Units, Blood_group, Purpose } = req.body;
-
-  // First query to insert patient
   const q1 = `INSERT INTO patient(Name, Units, Blood_group, Purpose) VALUES (?)`;
   const insertPatientPromise = new Promise((resolve, reject) => {
     db.query(q1, [[Name, Units, Blood_group, Purpose]], (err, result) => {

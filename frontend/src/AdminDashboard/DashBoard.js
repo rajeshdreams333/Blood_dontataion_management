@@ -10,7 +10,7 @@ const DashBoard = () => {
   return (
     <>
       <div className="flex">
-        <div className="w-1/6 h-screen bg-gray-300 text-center">
+        <div className="w-1/6 bg-gray-300 text-center h-screen">
         <div className="mt-16">
             <div>
               <button
