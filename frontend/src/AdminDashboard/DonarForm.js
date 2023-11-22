@@ -39,6 +39,7 @@ const DonarForm = () => {
     }
   };
   return (
+    <div className="bg-cover h-screen" style={{backgroundImage:`url("assets/healthcare-medical-concept-medicine-doctor-with-stethoscope-hand-patients-come_34200-313.avif" )`}}>
     <div className="flex justify-center font-serif">
       <form
         className="bg-white shadow-md rounded p-10 text-lg"
@@ -71,6 +72,7 @@ const DonarForm = () => {
               />
               Male
               <input
+              style={{marginLeft:"40px"}}
                 id="female"
                 type="radio"
                 name="Gender"
@@ -99,6 +101,7 @@ const DonarForm = () => {
         <div>
           <label className="mr-6">Blood Group
           <select
+          style={{marginLeft:"20px"}}
             name="Blood_group"
             id="blood"
             className="border border-gray-300 rounded w-20 "
@@ -170,6 +173,8 @@ const DonarForm = () => {
         </div>
       </form>
     </div>
+    </div>
+
   );
 };
 

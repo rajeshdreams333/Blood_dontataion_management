@@ -6,7 +6,7 @@ function Home() {
         <div className="flex">
           <div className="w-1/2 pl-32 pt-10">
             <h1 className="text-6xl mt-1m font-serif">
-              Donate Blood to Save Life
+              Donate <span style={{color:"red"}}>Blood</span> to Save Life
             </h1>
             <h1 className="text-xl pt-4  text-justify font-sans">
               People who volunteer, donate or take part in community service

@@ -28,24 +28,25 @@ const AddBlood = () => {
   };
 
   return (
-    <div>
-    <div className="flex justify-center items-center font-serif mt-10">
-      <form className="bg-white shadow-md rounded p-10 text-lg" onSubmit={handleSubmit}>
-        <h1 className="text-center text-lg font-bold">Blood Form</h1>
-        <div className="m-5 ml-0">
+    <div className="bg-cover h-screen"style={{backgroundImage:`url("assets/healthcare-medical-concept-medicine-doctor-with-stethoscope-hand-patients-come_34200-313.avif" )`}}>
+    <div className="flex justify-center items-center font-serif pt-10">
+      <form className="bg-white shadow-md rounded p-10 text-lg" onSubmit={handleSubmit} style={{height:"500px", marginTop:"30px"}}>
+        <h1 className="text-center text-lg font-bold" style={{fontSize:"33px"}}>Blood Form</h1>
+        <div className="m-5 ml-0" style={{fontSize:"20px",paddingTop:"30px"}}>
             Blood Units
           <input
-            className="w-full mt-2 border border-gray-300 rounded"
+            className="w-full mt-2 border border-gray-300 rounded"  style={{marginTop:"10px",height:"40px",borderColor:"black"}}
             type="number"
             placeholder="Units"
             name="Units"            
             required
             value={values.Units}
             onChange={handleInput}
+           
           />
         </div>
-        <div>
-          <label className="mr-6">
+        <div style={{fontSize:"20px",marginTop:"30px"}}>
+          <label className="mr-6"  >
             Blood Group
           </label>
           <select
@@ -55,6 +56,7 @@ const AddBlood = () => {
             value={values.Blood_group}
             required
             onChange={handleInput}
+
           >
             <option value="none" defaultValue>
               Select
@@ -69,7 +71,7 @@ const AddBlood = () => {
             <option value="AB-ve">AB-ve</option>
           </select>
         </div>
-        <div className="">
+        <div className="" style={{fontSize:"20px",marginTop:"20px"}}>
           <button
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold mt-4 py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             type="submit"

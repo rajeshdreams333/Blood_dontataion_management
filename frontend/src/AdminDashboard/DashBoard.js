@@ -10,11 +10,12 @@ const DashBoard = () => {
   return (
     <>
       <div className="flex">
-        <div className="w-1/6 bg-gray-300 text-center h-screen">
+        <div className="w-1/6 bg-red-500 text-center h-screen">
         <div className="mt-16">
             <div>
               <button
-                className="bg-red-300 h-10 w-40 rounded-3xl"
+             className="bg-blue-500 hover:bg-blue-700 h-10 w-40 rounded-3xl text-white font-bold"
+
                 onClick={() =>setIsToggled(1)}
               >
                 DashBoard
@@ -24,7 +25,7 @@ const DashBoard = () => {
           <div className="mt-16">
             <div>
               <button
-                className="bg-red-300 h-10 w-40 rounded-3xl"
+               className="bg-blue-500 hover:bg-blue-700 h-10 w-40 rounded-3xl text-white font-bold"
                 onClick={() =>setIsToggled(2)}
               >
                 Donar
@@ -34,7 +35,7 @@ const DashBoard = () => {
           <div className="mt-16">
             <div>
               <button
-                className="bg-red-300 h-10 w-40 rounded-3xl"
+               className="bg-blue-500 hover:bg-blue-700 h-10 w-40 rounded-3xl text-white font-bold"
                 onClick={() =>setIsToggled(3)}
               >
                 Donardetails
@@ -44,7 +45,7 @@ const DashBoard = () => {
           <div className="mt-16">
             <div>
               <button
-                className="bg-red-300 h-10 w-40 rounded-3xl"
+              className="bg-blue-500 hover:bg-blue-700 h-10 w-40 rounded-3xl text-white font-bold"
                 onClick={() =>setIsToggled(4)}
               >
                 AddBlood
@@ -54,7 +55,7 @@ const DashBoard = () => {
           <div className="mt-16">
             <div>
               <button
-                className="bg-red-300 h-10 w-40 rounded-3xl"
+                className="bg-blue-500 hover:bg-blue-700 h-10 w-40 rounded-3xl text-white font-bold"
                 onClick={() =>setIsToggled(5)}
               >
                 PatientForm
