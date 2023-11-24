@@ -39,8 +39,8 @@ const DonarForm = () => {
     }
   };
   return (
-    <div className="bg-cover h-screen" style={{backgroundImage:`url("assets/healthcare-medical-concept-medicine-doctor-with-stethoscope-hand-patients-come_34200-313.avif" )`}}>
-    <div className="flex justify-center font-serif">
+    <div className="bg-cover lg:h-screen" style={{backgroundImage:`url("assets/healthcare-medical-concept-medicine-doctor-with-stethoscope-hand-patients-come_34200-313.avif" )`}}>
+    <div className="flex justify-center font-serif pt-10">
       <form
         className="bg-white shadow-md rounded p-10 text-lg"
         onSubmit={handleSubmit}

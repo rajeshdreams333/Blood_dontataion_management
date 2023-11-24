@@ -28,14 +28,14 @@ const AddBlood = () => {
   };
 
   return (
-    <div className="bg-cover h-screen"style={{backgroundImage:`url("assets/healthcare-medical-concept-medicine-doctor-with-stethoscope-hand-patients-come_34200-313.avif" )`}}>
+    <div className="bg-cover lg:h-screen"style={{backgroundImage:`url("assets/healthcare-medical-concept-medicine-doctor-with-stethoscope-hand-patients-come_34200-313.avif" )`}}>
     <div className="flex justify-center items-center font-serif pt-10">
-      <form className="bg-white shadow-md rounded p-10 text-lg" onSubmit={handleSubmit} style={{height:"500px", marginTop:"30px"}}>
-        <h1 className="text-center text-lg font-bold" style={{fontSize:"33px"}}>Blood Form</h1>
-        <div className="m-5 ml-0" style={{fontSize:"20px",paddingTop:"30px"}}>
+      <form className="bg-white shadow-md rounded p-10 text-lg" onSubmit={handleSubmit}>
+        <h1 className="text-center text-lg font-bold">Blood Form</h1>
+        <div className="m-5 ml-0">
             Blood Units
           <input
-            className="w-full mt-2 border border-gray-300 rounded"  style={{marginTop:"10px",height:"40px",borderColor:"black"}}
+            className="w-full mt-2 border border-gray-300 rounded"  
             type="number"
             placeholder="Units"
             name="Units"            
@@ -71,7 +71,7 @@ const AddBlood = () => {
             <option value="AB-ve">AB-ve</option>
           </select>
         </div>
-        <div className="" style={{fontSize:"20px",marginTop:"20px"}}>
+        <div className="text-center mt-4 p-2">
           <button
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold mt-4 py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             type="submit"

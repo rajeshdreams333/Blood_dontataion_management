@@ -29,7 +29,6 @@ app.get("/donar", (req, res) => {
 });
 app.get("/blood", (req, res) => {
   const {Blood_group,Units}=req.body;
-  // console.log(Blood_group,Units);
   const q = "select * from  blood";
   db.query(q, (err, data) => {
     if (err) return res.json(err);
@@ -71,7 +70,6 @@ app.post("/blood", (req, res) => {
 });
 app.delete('/remove/:iddonar',(req,res)=>{
   const {iddonar}=req.params;
-  console.log(iddonar);
   const q='DELETE FROM donar WHERE iddonar = ?;';
   db.query(q,[iddonar],
   (err,result)=>{

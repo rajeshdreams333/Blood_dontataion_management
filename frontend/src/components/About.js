@@ -3,14 +3,12 @@ import React from "react";
 const About = () => {
   return (
     <>
-      <div
+      <div className="bg-cover"
         style={{
-          backgroundImage: `url("assets/blue-medical-background-concept-poster-design-vector_1017-11946.jpg") `,
-          height: "100vh",
-          backgroundSize: "cover",
+          backgroundImage:`url("assets/blue-medical-background-concept-poster-design-vector_1017-11946.jpg") `,
         }}
       >
-        <div className="pt-4 h-screen bg-slate">
+        <div className="pt-4 bg-slate">
           <div className=" text-2xl  text-center">
             <h1
               style={{
@@ -52,7 +50,7 @@ const About = () => {
               innovation, integrity and importance.
             </p>
             <div />
-            <div>
+            <div className="">
               <div className="grid gap-x-10 gap-y-2 grid-cols-4 mt-5">
                 <div
                   className="h-80 text-center bg-cover saturate-70 shadow-xl transform hover:scale-110 transition-transform"
@@ -64,7 +62,6 @@ const About = () => {
                     </h3>
                   </div>
                 </div>
-
                 <div
                   className="h-80 text-center bg-cover saturate-70 drop-shadow-lg transform hover:scale-110 transition-transform"
                   style={{
@@ -106,144 +103,115 @@ const About = () => {
             </div>
           </div>
         </div>
-        <div className="border  flex">
-          <div className="w-1/4 p-10">
+        <div className="border flex p-5 pt-0">
+          <div className="w-1/4">
             <h1 className="font-bold">Offshore-Visakhapatnam</h1>
             <address className="text-lg">
-              <span className="font-bold">&nbsp;Address: </span>Door
+              <span className="font-bold">Address: </span>Door
               Number#7-1/2B(2nd floor), Near Dmart, Madhurawada,
               Visakhapatnam-530048.
             </address>
             <p>
-              &nbsp;
               <a href="tel:847-960-4204">
-                <i class="bi bi-telephone-fill"></i>&nbsp;&nbsp;
                 <span className="font-bold">Call To:</span> 0891-2566299
               </a>
             </p>
             <p>
-              &nbsp;<i class="bi bi-printer-fill"></i>&nbsp;&nbsp;
               <a href="fax:847-960-3279">
                 <span className="font-bold">Fax:</span>&nbsp;&nbsp;847-960-3279
               </a>
             </p>
             <p>
-              &nbsp;
               <a href="mailto:hrteam@bedatatech.com">
-                <i class="bi bi-envelope-fill"></i>&nbsp;&nbsp;
                 <span className="text-xl font-bold">Mail To:</span>{" "}
                 <span classname="text-xl">hrteam@bedatatech.com</span>
               </a>
             </p>
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d30386.42817413678!2d83.34440131892326!3d17.824400926114325!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sDoor%20Number%237-1%2F2B%20Near%20D'Mart%20madhiravada!5e0!3m2!1sen!2sin!4v1627925980413!5m2!1sen!2sin"
-              className="w-full h-60"
+              className="w-full h-60 p-2 pl-0"
             ></iframe>
-          </div>
-          <div className="w-1/4 p-10">
-            <h1 className="font-bold">Offshore-Visakhapatnam</h1>
+            </div>
+            <div className="w-1/4">
+            <h1 className="font-bold">Offshore-Hyderabad</h1>
             <address className="text-lg">
-              &nbsp;<i class="bi bi-geo-alt-fill"></i>
-              <span className="font-bold">&nbsp;Address: </span>Door
-              Number#7-1/2B(2nd floor), Near Dmart, Madhurawada,
-              Visakhapatnam-530048.
+              <span className="font-bold">Address: </span>H.NO 8-2-224/B/4, Jawahar Nagar Rd, Krishna Nagar Yousufguda, Hyderabad-500045.
             </address>
             <p>
-              &nbsp;
               <a href="tel:847-960-4204">
-                <i class="bi bi-telephone-fill"></i>&nbsp;&nbsp;
-                <span className="font-bold">Call To:</span> 0891-2566299
+                <span className="font-bold">Call To:</span>040-23739542
+
               </a>
             </p>
             <p>
-              &nbsp;<i class="bi bi-printer-fill"></i>&nbsp;&nbsp;
               <a href="fax:847-960-3279">
-                <span className="font-bold">Fax:</span>&nbsp;&nbsp;847-960-3279
+                <span className="font-bold">Fax:</span>847-960-3279
               </a>
             </p>
             <p>
-              &nbsp;
               <a href="mailto:hrteam@bedatatech.com">
-                <i class="bi bi-envelope-fill"></i>&nbsp;&nbsp;
                 <span className="text-xl font-bold">Mail To:</span>{" "}
                 <span classname="text-xl">hrteam@bedatatech.com</span>
               </a>
             </p>
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d30386.42817413678!2d83.34440131892326!3d17.824400926114325!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sDoor%20Number%237-1%2F2B%20Near%20D'Mart%20madhiravada!5e0!3m2!1sen!2sin!4v1627925980413!5m2!1sen!2sin"
-              className="w-full h-60"
+              className="w-full h-60 p-2 pl-0"
             ></iframe>
-          </div>
-          <div className="w-1/4 p-10">
-            <h1 className="font-bold">Offshore-Visakhapatnam</h1>
+            </div>
+            <div className="w-1/4">
+            <h1 className="font-bold">Branch Office</h1>
             <address className="text-lg">
-              &nbsp;<i class="bi bi-geo-alt-fill"></i>
-              <span className="font-bold">&nbsp;Address: </span>Door
-              Number#7-1/2B(2nd floor), Near Dmart, Madhurawada,
-              Visakhapatnam-530048.
+              <span className="font-bold">Address: </span>6110 McFarland Station, Drive Ste# 503, Alpharetta, GA 30004.
             </address>
             <p>
-              &nbsp;
               <a href="tel:847-960-4204">
-                <i class="bi bi-telephone-fill"></i>&nbsp;&nbsp;
-                <span className="font-bold">Call To:</span> 0891-2566299
+                <span className="font-bold">Call To:</span> +1 847-960-4204
               </a>
             </p>
             <p>
-              &nbsp;<i class="bi bi-printer-fill"></i>&nbsp;&nbsp;
               <a href="fax:847-960-3279">
-                <span className="font-bold">Fax:</span>&nbsp;&nbsp;847-960-3279
+                <span className="font-bold">Fax:</span>847-960-3279
               </a>
             </p>
             <p>
-              &nbsp;
               <a href="mailto:hrteam@bedatatech.com">
-                <i class="bi bi-envelope-fill"></i>&nbsp;&nbsp;
                 <span className="text-xl font-bold">Mail To:</span>{" "}
                 <span classname="text-xl">hrteam@bedatatech.com</span>
               </a>
             </p>
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d30386.42817413678!2d83.34440131892326!3d17.824400926114325!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sDoor%20Number%237-1%2F2B%20Near%20D'Mart%20madhiravada!5e0!3m2!1sen!2sin!4v1627925980413!5m2!1sen!2sin"
-              className="w-full h-60"
+              className="w-full h-60 p-2 pl-0"
             ></iframe>
-          </div>
-          <div className="w-1/4 p-10">
-            <h1 className="font-bold">Offshore-Visakhapatnam</h1>
+            </div>
+            <div className="w-1/4">
+            <h1 className="font-bold">Corporate-Head Office</h1>
             <address className="text-lg">
-              &nbsp;<i class="bi bi-geo-alt-fill"></i>
-              <span className="font-bold">&nbsp;Address: </span>Door
-              Number#7-1/2B(2nd floor), Near Dmart, Madhurawada,
-              Visakhapatnam-530048.
+              <span className="font-bold">Address: </span>5105 Tollview Drive, Ste# 247, Rolling Meadows,IL 60008.
             </address>
             <p>
-              &nbsp;
               <a href="tel:847-960-4204">
-                <i class="bi bi-telephone-fill"></i>&nbsp;&nbsp;
-                <span className="font-bold">Call To:</span> 0891-2566299
-              </a>
+                <span className="font-bold">Call To:</span> +1 847-960-4204
+                </a>
             </p>
             <p>
-              &nbsp;<i class="bi bi-printer-fill"></i>&nbsp;&nbsp;
               <a href="fax:847-960-3279">
-                <span className="font-bold">Fax:</span>&nbsp;&nbsp;847-960-3279
+                <span className="font-bold">Fax:</span>847-960-3279
               </a>
             </p>
             <p>
-              &nbsp;
               <a href="mailto:hrteam@bedatatech.com">
-                <i class="bi bi-envelope-fill"></i>&nbsp;&nbsp;
                 <span className="text-xl font-bold">Mail To:</span>{" "}
                 <span classname="text-xl">hrteam@bedatatech.com</span>
               </a>
             </p>
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d30386.42817413678!2d83.34440131892326!3d17.824400926114325!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sDoor%20Number%237-1%2F2B%20Near%20D'Mart%20madhiravada!5e0!3m2!1sen!2sin!4v1627925980413!5m2!1sen!2sin"
-              className="w-full h-60"
+              className="w-full h-60 p-2 pl-0"
             ></iframe>
-          </div>
+            </div>
         </div>
-        <div></div>
       </div>
     </>
   );

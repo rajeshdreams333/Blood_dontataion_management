@@ -9,13 +9,12 @@ const DashBoard = () => {
   const [isToggled,setIsToggled]=useState(1);
   return (
     <>
-      <div className="flex">
-        <div className="w-1/6 bg-red-500 text-center h-screen">
+      <div className="flex h-screen">
+        <div className="w-1/6 bg-red-500 text-center">
         <div className="mt-16">
             <div>
               <button
              className="bg-blue-500 hover:bg-blue-700 h-10 w-40 rounded-3xl text-white font-bold"
-
                 onClick={() =>setIsToggled(1)}
               >
                 DashBoard

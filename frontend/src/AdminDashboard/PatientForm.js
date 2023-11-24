@@ -31,23 +31,22 @@ const PatientForm = () => {
     }
   };
   return (
-    <div className="h-screen bg-cover"style={{ backgroundImage: `url('assets/human-resources-management-concept-hand-choosing-people-icon-human-resources-recruitment-human-resources-hr-management-recruitment-employment-headhunting-conce.avif')`}}>
+    <div className="min-h-screen max-h-screen bg-cover"style={{ backgroundImage: `url('assets/human-resources-management-concept-hand-choosing-people-icon-human-resources-recruitment-human-resources-hr-management-recruitment-employment-headhunting-conce.avif')`}}>
       <div className="flex justify-center items-center font-serif ">
         <form
-          className="bg-white shadow-md rounded p-10 mt-14 text-lg" style={{height:"600px", width:"500px"}}
+          className="bg-white shadow-md rounded p-10 mt-14 text-lg"
           onSubmit={handleSubmit}
         >
           <h1 className="text-center text-lg font-bold" style={{fontSize:"35px" }}>PatientForm</h1>
           <div className="m-5 ml-0">
-            <div  style={{marginTop:"30px"}}
->
-            <label style={{fontSize:"25px"}}>
+            <div className="mt-2">
+            <label className="text-2xl">
               Name
               <label/>
               <input
               className="w-full mt-3 h-14 border border-gray-300 rounded"
                 type="text"
-                placeholder="  Name"
+                placeholder="Name"
                 name="Name"
                 required
                 value={values.Name}
@@ -56,14 +55,13 @@ const PatientForm = () => {
               />
             </label>
             </div>
-            <div  style={{marginTop:"30px"}}
->
-            <label   style={{fontSize:"25px",marginTop:"50px"}}>
+            <div className="mt-2">
+            <label className="text-2xl">
               Units
             <input
               className="w-full h-14 mt-2 border border-gray-300 rounded"
               type="number"
-              placeholder="  Units"
+              placeholder="Units"
               name="Units"
               required
               value={values.Units}
@@ -72,13 +70,12 @@ const PatientForm = () => {
             </label>
             </div>
           </div>
-          <div  style={{marginTop:"30px"}}
->
-            <label className="mr-6" >Blood Group</label>
+          <div className="mt-2">
+            <label className="text-2xl pr-4">Blood Group</label>
             <select
               type="text"
               name="Blood_group"
-              className="border border-gray-300 rounded w-20 "
+              className="border border-gray-300 rounded w-20"
               value={values.Blood_group}
               required
               onChange={handleInput}
@@ -96,13 +93,13 @@ const PatientForm = () => {
               <option value="AB-ve">AB-ve</option>
             </select>
           </div>
-          <div style={{fontSize:"25px",marginTop:"20px"}}>
-          <label >
+          <div className="mt-2">
+          <label className="text-2xl">
             Purpose
             <input
-              className="border border-gray-300 h-14 rounded w-full"
+              className="border border-gray-300 h-14 rounded w-full mt-2"
               type="text"
-              placeholder="  Purpose"
+              placeholder="Purpose"
               name="Purpose"
               required
               value={values.Purpose}
@@ -114,7 +111,6 @@ const PatientForm = () => {
               className="bg-blue-500 hover:bg-blue-700 text-white font-bold mt-4 py-2 px-4 rounded focus:outline-none focus:shadow-outline"
               type="submit"
               style={{fontSize:"25px",marginTop:"40px"}}
-             
             >
               Submit
             </button>
