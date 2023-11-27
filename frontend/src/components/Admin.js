@@ -20,14 +20,13 @@ const Admin = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-cover" style={{ backgroundImage: `url('/assets/Adminbg.png')`, position:"fixed", height:"100vh",width:"100vw",backgroundSize:"cover"}}>
     <div >
-      <div className="bg-white p-8 rounded-lg shadow-2xl" style={{height:"450px",width:"450px"}}>
-        <h2 className="font-bold text-center text-3xl"  style={{fontSize:"40px"}}>Admin Login</h2>
-        <form action="" onSubmit={submitHandler}>
-          <div className="mb-3 mt-10">
-            <label className="text-xl mb-5" style={{fontSize:"25px"}}>Username</label>
+      <div className="bg-white rounded-lg shadow-2xl" style={{height:"450px",width:"450px"}}>
+        <h2 className="font-bold text-center text-3xl p-8" style={{fontSize:"40px"}}>Admin Login</h2>
+        <form action="" onSubmit={submitHandler} className="px-5">
+          <div className="">
+            <label className="text-xl">Username
             <input
               type="text"
-
               placeholder="Username"
               name="username"
               value={username}
@@ -35,9 +34,10 @@ const Admin = () => {
               className="w-full p-1 mt-1 border border-gray-300 rounded focus:ring focus:ring-red-200 focus:outline-none"
               style={{height:"50px",borderColor:"black"}}
            />
+          </label>
           </div>
-          <div className="mb-3 mt-6">
-            <label className="text-xl"  style={{fontSize:"25px"}}>Password</label>
+          <div className="">
+            <label className="text-xl">Password
             <input
               type="password"
               placeholder="Password"
@@ -47,10 +47,10 @@ const Admin = () => {
               className="w-full p-1 mt-1 border border-gray-300 rounded focus:ring focus:ring-red-200 focus:outline-none"
               style={{height:"50px",borderColor:"black"}}
            />
+           </label>
           </div>
           <div className="text-center">
           <button
-          
             type="submit"
             className="py-1 px-3 mt-3 bg-red-500 text-white rounded hover:bg-red-600 focus:ring focus:ring-indigo-400 focus:outline-none"
           

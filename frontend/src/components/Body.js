@@ -6,10 +6,10 @@ import Contactus from './Contactus';
 import Admin from './Admin';
 import DashBoard from '../AdminDashboard/DashBoard';
 import Donardetails from '../AdminDashboard/Donardetails';
-import UpdateDonar from '../AdminDashboard/UpdateDonar';
 import DonarForm from '../AdminDashboard/DonarForm';
 import AddBlood from '../AdminDashboard/AddBlood';
 import PatientForm from '../AdminDashboard/PatientForm';
+import BloodStocks from '../AdminDashboard/BloodStocks';
 const Body = () => {
   return (
     <>
@@ -20,11 +20,12 @@ const Body = () => {
     <Route path="/contactus" element={<Contactus/>}/>
     <Route path="/admin" element={<Admin/>}/>
     <Route path="/DashBoard" element={<DashBoard/>}/>
-    <Route path="/DonarForm" element={<DonarForm/>}/>
-    <Route path="/AddBlood" element={<AddBlood/>}/>
-    <Route path="/Donardetails" element={<Donardetails/>}/>
-    <Route path="/PatientForm" element={<PatientForm/>}/>
-    <Route path="/DashBoard/update/:iddonar" element={<UpdateDonar/>}/> 
+    <Route path="/Dashboard/DonarForm" element={<DonarForm/>}/>
+    <Route path="/Dashboard/AddBlood" element={<AddBlood/>}/>
+    <Route path="/Dashboard/Donardetails" element={<Donardetails/>}/>
+    <Route path="/Dashboard/PatientForm" element={<PatientForm/>}/>
+    <Route path="/Dashboard/BloodStocks" element={<BloodStocks/>}/>
+    {/* <Route path="/DashBoard/update/:iddonar" element={<UpdateDonar/>}/>  */}
     </Routes>
     </div>
     </>

@@ -1,86 +1,48 @@
-import React, { useState } from "react";
-import DonarForm from "./DonarForm";
-import Donardetails from "./Donardetails";
-import AddBlood from "./AddBlood";
-import PatientForm from "./PatientForm";
-import BloodStocks from "./BloodStocks";
-
+import React from "react";
+import { Link } from "react-router-dom";
 const DashBoard = () => {
-  const [isToggled,setIsToggled]=useState(1);
   return (
     <>
-      <div className="flex h-screen">
-        <div className="w-1/6 bg-red-500 text-center">
-        <div className="mt-16">
             <div>
+              <Link to="/DashBoard/BloodStocks">
               <button
-             className="bg-blue-500 hover:bg-blue-700 h-10 w-40 rounded-3xl text-white font-bold"
-                onClick={() =>setIsToggled(1)}
               >
-                DashBoard
+                BloodStock
               </button>
-            </div>  
-          </div>
-          <div className="mt-16">
+              </Link>
+            </div> 
             <div>
+              <Link to="/DashBoard/DonarForm">
               <button
-               className="bg-blue-500 hover:bg-blue-700 h-10 w-40 rounded-3xl text-white font-bold"
-                onClick={() =>setIsToggled(2)}
               >
-                Donar
+                Donar Form
               </button>
+              </Link>
             </div>  
-          </div>
-          <div className="mt-16">
             <div>
+              <Link to="/DashBoard/Donardetails">
               <button
-               className="bg-blue-500 hover:bg-blue-700 h-10 w-40 rounded-3xl text-white font-bold"
-                onClick={() =>setIsToggled(3)}
               >
                 Donardetails
               </button>
+              </Link>
             </div>  
-          </div>
-          <div className="mt-16">
             <div>
+              <Link to="/DashBoard/AddBlood">
               <button
-              className="bg-blue-500 hover:bg-blue-700 h-10 w-40 rounded-3xl text-white font-bold"
-                onClick={() =>setIsToggled(4)}
               >
                 AddBlood
               </button>
+              </Link>
             </div>  
-          </div>
-          <div className="mt-16">
             <div>
+              <Link to="/DashBoard/PatientForm">
               <button
-                className="bg-blue-500 hover:bg-blue-700 h-10 w-40 rounded-3xl text-white font-bold"
-                onClick={() =>setIsToggled(5)}
               >
                 PatientForm
               </button>
-            </div>  
-          </div>
-      </div>
-      <div className="w-5/6">
-      {(() => {
-        switch (isToggled) {
-          case 1:
-            return <BloodStocks/>
-          case 2:
-            return <DonarForm/>
-          case 3:
-            return <Donardetails/>
-          case 4:
-            return <AddBlood/>
-          case 5:
-            return <PatientForm/>
-          default:
-            return null
-        }
-      })()}
-        </div>
-      </div>
+              </Link>
+            </div>   
     </>
   );
 }
