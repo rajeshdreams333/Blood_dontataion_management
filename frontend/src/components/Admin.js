@@ -18,9 +18,9 @@ const Admin = () => {
     else return alert('Invalid Username or Password')
   };
   return (
-    <div className="min-h-screen flex items-center justify-center bg-cover" style={{ backgroundImage: `url('/assets/Adminbg.png')`, position:"fixed", height:"100vh",width:"100vw",backgroundSize:"cover"}}>
+    <div className="flex items-center justify-center bg-cover" style={{ backgroundImage: `url('/assets/Adminbg.png')`, position:"fixed", height:"100vh",width:"100vw",backgroundSize:"cover"}}>
     <div >
-      <div className="bg-white rounded-lg shadow-2xl" style={{height:"450px",width:"450px"}}>
+      <div className="bg-white rounded-lg shadow-2xl" style={{height:"350px",width:"450px"}}>
         <h2 className="font-bold text-center text-3xl p-8" style={{fontSize:"40px"}}>Admin Login</h2>
         <form action="" onSubmit={submitHandler} className="px-5">
           <div className="">
@@ -53,7 +53,6 @@ const Admin = () => {
           <button
             type="submit"
             className="py-1 px-3 mt-3 bg-red-500 text-white rounded hover:bg-red-600 focus:ring focus:ring-indigo-400 focus:outline-none"
-          
          style={{height:"50px",width:"130px",marginTop:"30px", fontSize:"25px", fontWeight:"bold"}} >
             Login
           </button>

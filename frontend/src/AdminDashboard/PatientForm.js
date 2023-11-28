@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 const PatientForm = () => {
   const [values, setValues] = useState({
     Name:'',
@@ -117,6 +118,11 @@ const PatientForm = () => {
             </div>
           </div>
         </form>
+      </div>
+      <div className="text-center pt-10">
+        <Link to='/Dashboard'>
+        <button className="bg-red-300 p-2 px-5 rounded-lg">Back</button>
+        </Link>
       </div>
     </div>
   );

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const Donardetails = () => {
   const [donars, setDonars] = useState([]);
@@ -66,7 +67,13 @@ const Donardetails = () => {
               ))}
             </tbody>
           </table>
+          <div className="text-center mt-3 flex flex-col">
+        <Link to='/Dashboard'>
+        <button className="bg-red-300 p-2 px-5 rounded-lg">Back</button>
+        </Link>
+      </div>
         </div>
+        
       </div>
     </>
   );

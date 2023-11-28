@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 // import { useNavigate } from "react-router-dom";
 const DonarForm = () => {
   // const navigator=useNavigate()
@@ -39,14 +40,15 @@ const DonarForm = () => {
     }
   };
   return (
-    <div className="bg-cover lg:h-screen" style={{backgroundImage:`url("assets/healthcare-medical-concept-medicine-doctor-with-stethoscope-hand-patients-come_34200-313.avif" )`}}>
-    <div className="flex justify-center font-serif pt-10">
+    <div className="bg-cover" style={{backgroundImage:`url("assets/healthcare-medical-concept-medicine-doctor-with-stethoscope-hand-patients-come_34200-313.avif" )`}}>
+    <div className="flex justify-center font-serif p-10">
       <form
-        className="bg-white shadow-md rounded p-10 text-lg"
+        className="bg-white shadow-md rounded-lg text-xl p-4 w-[25rem]"
         onSubmit={handleSubmit}
       >
-        <h1 className="text-center text-lg font-bold">Donar Form</h1>
-        <div className="m-5 ml-0">
+        <h1 className="text-center text-3xl font-bold">Donar Form</h1>
+        <div className="space-y-4 px-4 pt-4">
+        <div className="">
           <label>Name
           <input
             className="w-full mt-2 border border-gray-300 rounded"
@@ -59,7 +61,7 @@ const DonarForm = () => {
           />
           </label>
         </div>
-        <div className="m-5 ml-0">
+        <div className="">
           <label>
             Gender
             <div>
@@ -72,7 +74,6 @@ const DonarForm = () => {
               />
               Male
               <input
-              style={{marginLeft:"40px"}}
                 id="female"
                 type="radio"
                 name="Gender"
@@ -83,11 +84,11 @@ const DonarForm = () => {
             </div>
           </label>
         </div>
-        <div className="m-5 ml-0">
+        <div className="">
           <label>
           Age
           <input
-            className="w-full mt-2 border border-gray-300 rounded"
+            className="w-full border border-gray-300 rounded"
             id="age"
             type="number"
             placeholder="Age"
@@ -99,12 +100,11 @@ const DonarForm = () => {
           </label>
         </div>
         <div>
-          <label className="mr-6">Blood Group
+          <label className="">Blood Group
           <select
-          style={{marginLeft:"20px"}}
             name="Blood_group"
             id="blood"
-            className="border border-gray-300 rounded w-20 "
+            className="border border-gray-300 rounded"
             value={values.Blood_group}
             required
             onChange={handleInput}
@@ -123,7 +123,7 @@ const DonarForm = () => {
           </select>
           </label>
         </div>
-        <div className="m-5 ml-0">
+        <div className="">
           <label>Email
           <input
             className="w-full mt-2 border border-gray-300 rounded"
@@ -136,10 +136,10 @@ const DonarForm = () => {
           />
           </label>
         </div>
-        <div className="m-5 ml-0">
-          <label className="">Mobile Number
+        <div className="">
+          <label className="">Mobile
           <input
-            className="w-full mt-2 border border-gray-300 rounded"
+            className="w-full border border-gray-300 rounded"
             id="mobile"
             type="text"
             placeholder="Mobile"
@@ -150,10 +150,10 @@ const DonarForm = () => {
           />
           </label>
         </div>
-        <div className="m-5 ml-0">
+        <div className="">
           <label className="">Address
           <input
-            className="w-full mt-2 border border-gray-300 rounded"
+            className="w-full border border-gray-300 rounded"
             id="Address"
             type="text"
             placeholder="Address"
@@ -163,7 +163,7 @@ const DonarForm = () => {
           />
           </label>
         </div>
-        <div className="">
+        <div className="text-center">
           <button
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold mt-4 py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             type="submit"
@@ -171,10 +171,15 @@ const DonarForm = () => {
             Submit
           </button>
         </div>
+        </div>
       </form>
     </div>
+    <div className="text-center">
+        <Link to='/Dashboard'>
+        <button className="bg-red-300 p-2 px-5 rounded-lg">Back</button>
+        </Link>
+      </div>
     </div>
-
   );
 };
 
