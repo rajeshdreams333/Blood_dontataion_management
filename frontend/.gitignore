@@ -4,8 +4,9 @@
 /node_modules
 /.pnp
 .pnp.js
-.firebaserc
-.firebase
+/.firebaserc
+/.firebase
+/.gitignore
 
 # testing
 /coverage
