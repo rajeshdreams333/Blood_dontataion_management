@@ -18,12 +18,11 @@ const Admin = () => {
     else return alert('Invalid Username or Password')
   };
   return (
-    <div className="flex items-center justify-center bg-cover" style={{ backgroundImage: `url('/assets/Adminbg.png')`, position:"fixed", height:"100vh",width:"100vw",backgroundSize:"cover"}}>
-    <div >
-      <div className="bg-white rounded-lg shadow-2xl" style={{height:"350px",width:"450px"}}>
-        <h2 className="font-bold text-center text-3xl p-8" style={{fontSize:"40px"}}>Admin Login</h2>
+    <>
+    <div className="p-4">
+      <div className="bg-white mx-auto rounded-lg shadow-2xl h-[350px] w-[400px]">
+        <h2 className="font-bold text-3xl p-8" style={{fontSize:"40px"}}>Admin Login</h2>
         <form action="" onSubmit={submitHandler} className="px-5">
-          <div className="">
             <label className="text-xl">Username
             <input
               type="text"
@@ -35,8 +34,6 @@ const Admin = () => {
               style={{height:"50px",borderColor:"black"}}
            />
           </label>
-          </div>
-          <div className="">
             <label className="text-xl">Password
             <input
               type="password"
@@ -48,8 +45,7 @@ const Admin = () => {
               style={{height:"50px",borderColor:"black"}}
            />
            </label>
-          </div>
-          <div className="text-center">
+           <div className="items-center">
           <button
             type="submit"
             className="py-1 px-3 mt-3 bg-red-500 text-white rounded hover:bg-red-600 focus:ring focus:ring-indigo-400 focus:outline-none"
@@ -59,8 +55,8 @@ const Admin = () => {
           </div>
         </form>
       </div>
-    </div>
-    </div>
+      </div>
+      </>
   );
 };
 

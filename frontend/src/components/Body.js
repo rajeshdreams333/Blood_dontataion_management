@@ -13,7 +13,7 @@ import BloodStocks from '../AdminDashboard/BloodStocks';
 const Body = () => {
   return (
     <>
-    <div className='flex-1 overflow-y-auto'>
+    <div className='flex-1 overflow-y-visible'>
     <Routes>
     <Route path="/" element={<Home/>}/>
     <Route path="/about" element={<About />}/>
