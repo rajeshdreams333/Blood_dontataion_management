@@ -1,17 +1,17 @@
 const express = require("express");
-const mysql = require("mysql2");
+// const mysql = require("mysql2");
 const app = express();
-const cors = require("cors");
+// const cors = require("cors");
 
-const db = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "8096",
-  database: "BDMS",
-  insecureAuth: true,
-});
+// const db = mysql.createConnection({
+//   host: "localhost",
+//   user: "root",
+//   password: "8096",
+//   database: "BDMS",
+//   insecureAuth: true,
+// });
 app.get("/",(req,res)=>{
-  res.send("Server is running")
+  res.json("Hello....")
 })
 app.use(express.json());
 app.use(cors(
@@ -21,13 +21,13 @@ app.use(cors(
     credentials:true
   }
 ));
-db.connect((err) => {
-  if (err) {
-    console.error("Database connection failed: " + err.stack);
-    return;
-  }
-  console.log("Connected to the database");
-});
+// db.connect((err) => {
+//   if (err) {
+//     console.error("Database connection failed: " + err.stack);
+//     return;
+//   }
+//   console.log("Connected to the database");
+// });
 app.get("/donar", (req, res) => {
   const q = "select * from  donar";
   db.query(q, (err, data) => {
