@@ -14,13 +14,13 @@ app.get("/", (req, res) => {
   res.json("Hello....");
 });
 app.use(express.json());
-app.use(
-  cors({
-    origin: ["https://beedatabdms.web.app/"],
-    methods: ["POST", "GET", "DELETE"],
-    credentials: true,
-  })
-);
+// app.use(
+//   cors({
+//     origin: ["https://beedatabdms.web.app/"],
+//     methods: ["POST", "GET", "DELETE"],
+//     credentials: true,
+//   })
+// );
 db.connect((err) => {
   if (err) {
     console.error("Database connection failed: " + err.stack);
