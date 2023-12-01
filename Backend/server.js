@@ -16,7 +16,7 @@ app.get("/", (req, res) => {
 app.use(express.json());
 app.use(
   cors({
-    origin: ["https://corsproxy.io/?https://beedatabdms.web.app/"],
+    origin: ["https://beedatabdms.web.app/"],
     methods: ["POST", "GET", "DELETE"],
     credentials: true,
   })
