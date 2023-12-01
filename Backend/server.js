@@ -1,33 +1,33 @@
 const express = require("express");
-// const mysql = require("mysql2");
+const mysql = require("mysql2");
 const app = express();
-// const cors = require("cors");
+const cors = require("cors");
 
-// const db = mysql.createConnection({
-//   host: "localhost",
-//   user: "root",
-//   password: "8096",
-//   database: "BDMS",
-//   insecureAuth: true,
-// });
-app.get("/",(req,res)=>{
-  res.json("Hello....")
-})
+const db = mysql.createConnection({
+  host: "localhost",
+  user: "root",
+  password: "8096",
+  database: "BDMS",
+  insecureAuth: true,
+});
+app.get("/", (req, res) => {
+  res.json("Hello....");
+});
 app.use(express.json());
-app.use(cors(
-  {
-    origin:["https://corsproxy.io/?https://beedatabdms.web.app/"],
-    methods:["POST","GET","DELETE"],
-    credentials:true
+app.use(
+  cors({
+    origin: ["https://corsproxy.io/?https://beedatabdms.web.app/"],
+    methods: ["POST", "GET", "DELETE"],
+    credentials: true,
+  })
+);
+db.connect((err) => {
+  if (err) {
+    console.error("Database connection failed: " + err.stack);
+    return;
   }
-));
-// db.connect((err) => {
-//   if (err) {
-//     console.error("Database connection failed: " + err.stack);
-//     return;
-//   }
-//   console.log("Connected to the database");
-// });
+  console.log("Connected to the database");
+});
 app.get("/donar", (req, res) => {
   const q = "select * from  donar";
   db.query(q, (err, data) => {
@@ -36,7 +36,7 @@ app.get("/donar", (req, res) => {
   });
 });
 app.get("/blood", (req, res) => {
-  const {Blood_group,Units}=req.body;
+  const { Blood_group, Units } = req.body;
   const q = "select * from  blood";
   db.query(q, (err, data) => {
     if (err) return res.json(err);
@@ -61,33 +61,30 @@ app.post("/donar", (req, res) => {
   );
 });
 app.post("/blood", (req, res) => {
-  const { Blood_group,Units} = req.body;
+  const { Blood_group, Units } = req.body;
   const q = `update blood set Units = Units + ? where Blood_group = ?`;
-  db.query(
-    q,
-    [Number(Units),Blood_group],
-    (err, result) => {
-      if (err) {
-        console.error("Database error: " + err);
-        res.status(500).json({ success: false, message: "Blood Added Failed" });
-      } else {
-        res.json({ success: true, message: "Blood Added Successfully" });
-      }
+  db.query(q, [Number(Units), Blood_group], (err, result) => {
+    if (err) {
+      console.error("Database error: " + err);
+      res.status(500).json({ success: false, message: "Blood Added Failed" });
+    } else {
+      res.json({ success: true, message: "Blood Added Successfully" });
     }
-  );
+  });
 });
-app.delete('/remove/:iddonar',(req,res)=>{
-  const {iddonar}=req.params;
-  const q='DELETE FROM donar WHERE iddonar = ?;';
-  db.query(q,[iddonar],
-  (err,result)=>{
-    if(err){
-      console.log("Database Error:"+err);
-      res.status(500).json({success:false,message:"Donar Deleted Failed.."})
-    }else{
-      res.json({success:true,message:"Donar Deleted Successfully.."})
+app.delete("/remove/:iddonar", (req, res) => {
+  const { iddonar } = req.params;
+  const q = "DELETE FROM donar WHERE iddonar = ?;";
+  db.query(q, [iddonar], (err, result) => {
+    if (err) {
+      console.log("Database Error:" + err);
+      res
+        .status(500)
+        .json({ success: false, message: "Donar Deleted Failed.." });
+    } else {
+      res.json({ success: true, message: "Donar Deleted Successfully.." });
     }
-  })
+  });
 });
 app.post("/patients", (req, res) => {
   const { Name, Units, Blood_group, Purpose } = req.body;
@@ -122,9 +119,7 @@ app.post("/patients", (req, res) => {
     });
 });
 
-const port = process.env.PORT || 5000;
-app.listen(port, () => {  
-  console.log(`Server is running on port ${port}`);
+// const port = process.env.PORT || 5000;
+app.listen(5000, () => {
+  console.log("Server is running on port");
 });
-
- 
