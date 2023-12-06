@@ -14,13 +14,10 @@ app.get("/", (req, res) => {
   res.json("Hello....");
 });
 app.use(express.json());
-app.use(
-  cors({
-    origin: ["https://beedatabdms.web.app"],
-    methods: ["POST", "GET", "DELETE"],
-    credentials: true,
-  })
-);
+let corsOptions = {
+  origin: ["http://localhost:3000", "https://beedatabdms.web.app"],
+};
+app.use(cors(corsOptions));
 db.connect((err) => {
   if (err) {
     console.error("Database connection failed: " + err.stack);
@@ -119,7 +116,7 @@ app.post("/patients", (req, res) => {
     });
 });
 
-// const port = process.env.PORT || 5000;
-app.listen(5000, () => {
-  console.log("Server is running on port 5000");
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  console.log(`Server running on ${PORT}`);
 });
