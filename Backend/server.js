@@ -40,7 +40,6 @@ app.get("/blood", (req, res) => {
     return res.json(data);
   });
 });
-
 app.post("/donar", (req, res) => {
   const { Name, Gender, Age, Mobile, Email, Blood_group, Address } = req.body;
   const q = `INSERT INTO donar(Name,Gender,Age,Mobile,Email,Blood_group,Address) values(?)`;
