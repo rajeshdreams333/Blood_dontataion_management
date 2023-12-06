@@ -2,7 +2,7 @@ const express = require("express");
 const mysql = require("mysql2");
 const app = express();
 const cors = require("cors");
-
+// const axois = require("axois");
 const db = mysql.createConnection({
   host: "localhost",
   user: "root",
@@ -14,17 +14,30 @@ app.get("/", (req, res) => {
   res.json("Hello....");
 });
 app.use(express.json());
+
 let corsOptions = {
-  origin: ["http://localhost:3000", "https://beedatabdms.web.app"],
+  origin: ["http://localhost:5000", "https://beedatabdms.web.app"],
 };
 app.use(cors(corsOptions));
-db.connect((err) => {
-  if (err) {
-    console.error("Database connection failed: " + err.stack);
-    return;
-  }
-  console.log("Connected to the database");
-});
+// app.get("/", (req, res) => {
+//   axois
+//     .get(
+//       "http://apis.data.go.kr/B551182/diseaseInfoService/getDissNameCodeList",
+//       {
+//         params: {
+//           sickType: 1,
+//           medTp: 2,
+//           diseaseType: "SICK_NM",
+//           searchText: textQuery,
+//           ServiceKey: process.env.KEY,
+//           numOfRows: numOfRowsQuery,
+//           _type: "json",
+//         },
+//       }
+//     )
+//     .then(response => res.send(response.data));
+// });
+
 app.get("/donar", (req, res) => {
   const q = "select * from  donar";
   db.query(q, (err, data) => {
@@ -40,6 +53,7 @@ app.get("/blood", (req, res) => {
     return res.json(data);
   });
 });
+
 app.post("/donar", (req, res) => {
   const { Name, Gender, Age, Mobile, Email, Blood_group, Address } = req.body;
   const q = `INSERT INTO donar(Name,Gender,Age,Mobile,Email,Blood_group,Address) values(?)`;
@@ -115,7 +129,7 @@ app.post("/patients", (req, res) => {
     });
 });
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log(`Server running on ${PORT}`);
+// const port = process.env.PORT || 5000;
+app.listen(5000, () => {
+  console.log("Server is running on port 5000");
 });
