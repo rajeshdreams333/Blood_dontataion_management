@@ -16,28 +16,9 @@ app.get("/", (req, res) => {
 app.use(express.json());
 
 let corsOptions = {
-  origin: ["http://localhost:5000", "https://beedatabdms.web.app"],
+  origin: ["http://localhost:3000", "https://beedatabdms.web.app"],
 };
 app.use(cors(corsOptions));
-// app.get("/", (req, res) => {
-//   axois
-//     .get(
-//       "http://apis.data.go.kr/B551182/diseaseInfoService/getDissNameCodeList",
-//       {
-//         params: {
-//           sickType: 1,
-//           medTp: 2,
-//           diseaseType: "SICK_NM",
-//           searchText: textQuery,
-//           ServiceKey: process.env.KEY,
-//           numOfRows: numOfRowsQuery,
-//           _type: "json",
-//         },
-//       }
-//     )
-//     .then(response => res.send(response.data));
-// });
-
 app.get("/donar", (req, res) => {
   const q = "select * from  donar";
   db.query(q, (err, data) => {
