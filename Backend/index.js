@@ -2,41 +2,38 @@ const express = require("express");
 const mysql = require("mysql2");
 const app = express();
 const cors = require("cors");
-const axios=require("axios")
+const axios = require("axios");
 app.get("/", (req, res) => {
   res.json("Welcome to BDMS Database System.....");
 });
-app.get("/rajesh", (req, res) => {
-  res.json("Hi Rajesh.....");
-});
 app.use(express.json());
 
-const corsOptions = {
-  origin: ["http://localhost:3000", "https://beedatabdms.web.app"],
-};
-app.use(cors(corsOptions));
-const db = mysql.createPool({
-  host: "localhost",
-  user: "root",
-  password: "8096",
-  database: "BDMS",
-  waitForConnections: true,
-connectionLimit: 10,
-queueLimit: 0,
-});
-db.getConnection((err, connection) => {
-  if (err) {
-    console.error('Database connection failed:', err.stack);
-    process.exit(1); // Exit the application if the database connection fails
-  }
-  console.log('Connected to MySQL database as ID ' + connection.threadId);
-  connection.release();
-});
+// const corsOptions = {
+//   origin: ["https://beedatabdms.web.app"],
+// };
+// app.use(cors(corsOptions));
+// const db = mysql.createPool({
+//   host: "localhost",
+//   user: "root",
+//   password: "8096",
+//   database: "BDMS",
+//   waitForConnections: true,
+//   connectionLimit: 10,
+//   queueLimit: 0,
+// });
+// db.getConnection((err, connection) => {
+//   if (err) {
+//     console.error("Database connection failed:", err.stack);
+//     process.exit(1);
+//   }
+//   console.log("Connected to MySQL database as ID " + connection.threadId);
+//   connection.release();
+// });
 app.listen(5000, () => {
   console.log("Server is running on port 5000");
 });
 
-// axios.get(`${corsOptions}/donar`, (req, res) => {
+// app.get("/donar", (req, res) => {
 //   const q = "select * from  donar";
 //   db.query(q, (err, data) => {
 //     if (err) return res.json(err);
